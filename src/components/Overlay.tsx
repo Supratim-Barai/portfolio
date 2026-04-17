@@ -27,10 +27,10 @@ export default function Overlay({ progress }: OverlayProps) {
         className="absolute inset-0 flex flex-col items-center justify-center text-center"
       >
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white drop-shadow-lg">
-          Supratim.
+          Supratim
         </h1>
         <p className="mt-4 text-xl md:text-3xl text-gray-300 max-w-lg font-light drop-shadow-md">
-          Creative Developer.
+          Application Developer
         </p>
       </motion.div>
 
