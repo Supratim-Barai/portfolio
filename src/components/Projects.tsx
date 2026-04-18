@@ -11,8 +11,11 @@ const projects = [
     role: "Lead Developer",
     description: "Engineered a social networking platform for stock market enthusiasts, handling real-time data feeds and interactive learning modules.",
     images: [
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2874&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=2874&auto=format&fit=crop"
+      "/assets/Social1.jpeg",
+      "/assets/Social2.jpeg",
+      "/assets/Social3.jpeg",
+      "/assets/Social4.jpeg",
+      "/assets/Social5.jpeg"
     ],
     tags: [
       { name: "React Native", icon: <SiReact className="text-[#61DAFB]" /> },
@@ -27,8 +30,9 @@ const projects = [
     role: "Lead Developer & AI Integration",
     description: "AI-Powered Cooking Companion. Integrated advanced contextual AI capabilities to assist users with recipes and cooking instructions.",
     images: [
-      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2940&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2940&auto=format&fit=crop"
+      "/assets/zucini1.jpeg",
+      "/assets/zucini2.jpeg",
+      "/assets/zucini3.jpeg"
     ],
     tags: [
       { name: "React Native", icon: <SiReact className="text-[#61DAFB]" /> },
@@ -43,8 +47,9 @@ const projects = [
     role: "Key Front-end Developer",
     description: "Developed the iOS version of this major bus booking platform, ensuring a seamless checkout and seat selection flow.",
     images: [
-      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2938&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=2942&auto=format&fit=crop"
+      "/assets/bus1.jpeg",
+      "/assets/bus2.jpeg",
+      "/assets/Bus3.jpeg"
     ],
     tags: [
       { name: "React Native", icon: <SiReact className="text-[#61DAFB]" /> },
@@ -87,12 +92,12 @@ function ProjectCard({ project, index }: { project: ProjectType; index: number }
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }}
-      className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:bg-white/10 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] flex flex-col"
+      className="group relative w-full rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:bg-white/10 hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] flex flex-col sm:flex-row"
     >
       {/* Horizontal Auto-Scroll Gallery */}
       <div 
         ref={scrollRef}
-        className="aspect-video overflow-x-hidden flex relative bg-black/20 shrink-0"
+        className="w-full sm:w-2/5 aspect-[9/16] overflow-x-hidden flex relative bg-black/20 shrink-0"
       >
         {project.images.map((img, idx) => (
           <div key={idx} className="min-w-full h-full shrink-0 relative">
@@ -100,26 +105,15 @@ function ProjectCard({ project, index }: { project: ProjectType; index: number }
             <img
               src={img}
               alt={`${project.title} screenshot ${idx + 1}`}
-              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500"
             />
           </div>
         ))}
-        
-        {/* Visual indicator dots */}
-        {project.images.length > 1 && (
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
-            {project.images.map((_, idx) => (
-              <div 
-                key={idx} 
-                className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${currentIndex === idx ? 'bg-white' : 'bg-white/30'}`} 
-              />
-            ))}
-          </div>
-        )}
+
       </div>
       
-      <div className="p-6 lg:p-8 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
+      <div className="p-5 lg:p-6 flex-1 flex flex-col justify-center">
+        <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">{project.title}</h3>
         <p className="text-xs font-semibold text-emerald-400 mb-4 tracking-wide uppercase">{project.role}</p>
         <p className="text-gray-400 mb-6 leading-relaxed text-sm flex-1">{project.description}</p>
         
@@ -150,7 +144,7 @@ export default function Projects() {
           <p className="text-gray-400 text-xl max-w-2xl font-light">A collection of my recent works focusing on performance, animation, and user experience.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
