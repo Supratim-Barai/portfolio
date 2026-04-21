@@ -56,6 +56,22 @@ const projects = [
       { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
     ],
   },
+  {
+    id: 4,
+    title: "AI ChatBot",
+    role: "Key Developer",
+    description: "Developed an AI-powered chatbot for customer support, leveraging NLP techniques to enhance user interactions.",
+    images: [
+      "/assets/aiChatbot1.png",
+      "/assets/aiChatbot2.png",
+    ],
+    tags: [
+      { name: "React", icon: <SiReact className="text-[#61DAFB]" /> },
+      { name: "Next.js", icon: <SiReact className="text-[#fff]" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
+      { name: "OpenAI", icon: <SiOpenai className="text-white" /> },
+    ],
+  },
 ];
 
 type ProjectType = typeof projects[0];
